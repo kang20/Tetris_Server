@@ -6,7 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ScoreDTO {
-    private String id;
-    private int score;
+public class LoginDTO {
+    private String id; // 학번
 }

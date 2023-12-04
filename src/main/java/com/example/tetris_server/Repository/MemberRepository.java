@@ -1,15 +1,24 @@
 package com.example.tetris_server.Repository;
 
+import com.example.tetris_server.Data.Domain.User;
 import com.example.tetris_server.Data.Entity.Member;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface MemberRepository {
-    Member save(Member member);
+    User save(User user);
 
 
-    Optional<Member> findByPassword(String password);
+    Optional<User> findbyid(String id);
 
+    List<User> findAll();
 
-    Optional<Member> findByName(String name);
+    void UpdateScore(String id ,int maxscore);
+
+    void UpdateWin(String id , int wind );
+    void UpdateFault(String id,int fault);
+
+    List<User> RankTen();
+
 }

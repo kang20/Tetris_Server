@@ -10,25 +10,22 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@Transactional
 public class memberRepositoryIT_Test {
 
     @Autowired
     private MemberRepository memberRepository;
 
+
     @Test
     public void 저장_test() {
         User user = new User();
-        user.setId("20200013");
+        String id = "20200013";
+        user.setId(id);
 
         memberRepository.save(user);
 
         assertThat(user.getId())
-                .isEqualTo(memberRepository.findbyid("ID").get().getId());
+                .isEqualTo(memberRepository.findbyid(id).get().getId());
     }
-
-
-
-
 
 }

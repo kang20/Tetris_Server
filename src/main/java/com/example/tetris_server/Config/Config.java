@@ -3,6 +3,7 @@ package com.example.tetris_server.Config;
 
 import com.example.tetris_server.Repository.JDBCTemplatememberRepository;
 import com.example.tetris_server.Repository.MemberRepository;
+import com.example.tetris_server.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,10 +21,10 @@ public class Config {
         this.dataSource = dataSource;
     }
 
-/*    @Bean
-    public memberService memberservice() {
-        return new memberService(memberRepository());
-    }*/
+    @Bean
+    public MemberService memberservice() {
+        return new MemberService(memberRepository());
+    }
 
     @Bean
     public MemberRepository memberRepository() {

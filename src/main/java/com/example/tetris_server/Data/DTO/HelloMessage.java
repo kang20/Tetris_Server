@@ -11,4 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class HelloMessage {
     private String name;
+    private int age;
 }

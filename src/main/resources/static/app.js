@@ -37,7 +37,8 @@ function sendName() {
 }
 
 function showGreeting(message) {
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+    // 메시지를 HTML에 추가하는 부분을 보장하기 위해 .text()를 사용하여 XSS 공격을 방지합니다.
+    $("#greetings").append($("<tr>").append($("<td>").text(message)));
 }
 
 $(function () {

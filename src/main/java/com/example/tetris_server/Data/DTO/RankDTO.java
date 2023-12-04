@@ -1,12 +1,13 @@
 package com.example.tetris_server.Data.DTO;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ScoreDTO {
+public class RankDTO {
+
     private String id;
-    private int score;
+    private int maxscore;
+
 }
